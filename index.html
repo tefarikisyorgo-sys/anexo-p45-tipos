@@ -3,69 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anexo Tipos de Visita</title>
-<meta name="description" content="Anexo de P4 y P5 con diferenciación de visitas (tipos de visita inspirados en Moe, 2003). Falabella, julio 2026.">
-<link rel="stylesheet" href="./style.css?v=2026111102">
+<title>Anexo Clasificación de Visitas</title>
+<meta name="description" content="Anexo de P4 y P5 con clasificación de visitas inspirada en Moe (2003). Falabella, julio 2026.">
+<link rel="stylesheet" href="./style.css?v=2026111201">
 </head>
 <body>
 <header class="top">
   <div class="wrap top-in">
-    <a class="brand" href="#reglas">Anexo P4 y P5 · Tipos de visita <span>julio 2026</span></a>
+    <a class="brand" href="#intro">Anexo P4 y P5 · Clasificación de visitas <span>julio 2026</span></a>
     <nav class="menu" aria-label="Secciones">
+      <a href="#intro">Resumen</a>
       <a href="#reglas">Reglas</a>
-      <a href="#reparto">Cuánto pesa cada tipo</a>
+      <a href="#perfil">¿Las clases se distinguen?</a>
       <a href="#caminos">P4: caminos</a>
       <a href="#matriz">P4: matriz</a>
       <a href="#fuga">P5: fuga</a>
-      <a href="#mezcla">¿Viene del tipo de visita?</a>
+      <a href="#mezcla">¿Viene de la clase de visita?</a>
       <a href="#sens">Sensibilidades</a>
     </nav>
   </div>
 </header>
 <main class="wrap">
   <section id="intro">
-    <h1>P4 y P5 con diferenciación de visitas</h1>
-    <p class="nota-corta">Complemento de la pestaña “Respuesta P4 y P5 con diferenciación de visitas”. Anexo principal de P5: <a href="https://tefarikisyorgo-sys.github.io/anexo-p5/">anexo-p5</a>.</p>
+    <h1>P4 y P5 con clasificación de visitas</h1>
+    <p class="nota-corta">Complemento de la pestaña “Respuesta P4 y P5 con diferenciación de visitas”. Anexo principal de P5: <a href="https://tefarikisyorgo-sys.github.io/anexo-p5/">anexo-p5</a>. Versión 2 (11-nov): reglas nuevas basadas en las medidas de Moe (2003).</p>
+    <p class="conclusion"><b>Por ende,</b> la mitad de las visitas de no compradores son cortas (49% frente a 29% en compradores). Eso explica cerca del 60% de la diferencia de fuga en Producto y cerca del 70% en Listado. El resto es comportamiento: dentro de la misma clase de visita, el no comprador se va más. En Carrito la clase casi no explica nada (21,1% → 19,6%; compradores 10,9%).</p>
   </section>
+
   <section id="reglas">
     <h2>Reglas de clasificación</h2>
-    <p class="nota-corta">Complemento de P4 y P5 (pestaña “Respuesta P4 y P5 con diferenciación de visitas”). Cada visita recibe un nombre según cómo navega, no según si compró. La base no cambia: la suma de las transiciones de los cinco tipos reproduce exactamente la matriz de P4. Inspirado en Moe (2003), sin clustering: describe comportamiento, no intención comprobada.</p>
+    <p class="nota-corta">Moe (2003) agrupó visitas con clustering usando solo las páginas de productos (portada, categorías, búsquedas y fichas). Dejó fuera las páginas de transacción (carro, pago) y la compra, porque si las incluía la compra dominaba los grupos. Aquí no hacemos clustering: usamos reglas simples con sus mismas medidas. Las reglas se aplican en orden y cada visita queda en una sola clase. Llegar al carro y comprar no se usan para clasificar; se usan para validar.</p>
     <div class="scroll"><table class="tabla texto">
-      <thead><tr><th>Orden</th><th>Tipo</th><th>Regla</th><th>Por qué esta señal</th><th>Equivalente en Moe (2003)</th></tr></thead>
+      <thead><tr><th>Orden</th><th>Clase</th><th>Regla</th><th>Por qué</th><th>En Moe (2003)</th></tr></thead>
       <tbody>
-        <tr><td>1</td><td>Superficial (rebote)</td><td>1 solo clic</td><td>Entra y se va</td><td>Visitas superficiales</td></tr>
-        <tr><td>2</td><td>Compra dirigida</td><td>Llega al carro (Agregar al carro o Carrito) o al Checkout, compre o no</td><td>Señal más clara de que eligió un producto</td><td>Compra dirigida</td></tr>
-        <tr><td>3</td><td>Gestión de cuenta</td><td>Entra a Cuenta y servicios sin ver fichas</td><td>Viene a revisar un pedido o su cuenta</td><td>No está en Moe (propia de un retailer con cuenta)</td></tr>
-        <tr><td>4</td><td>Busca y compara</td><td>Usa el buscador (y no llega al carro)</td><td>Escribir una búsqueda indica que viene a algo específico</td><td>Búsqueda y deliberación</td></tr>
-        <tr><td>5</td><td>Explora (vitrinea)</td><td>El resto: navega sin buscar y sin llegar al carro</td><td>Mira sin un objetivo concreto</td><td>Exploración (hedonic browsing)</td></tr>
+        <tr><td>1</td><td>Corta</td><td>1 clic, o solo portada y como mucho 1 listado o búsqueda, sin abrir fichas ni ir al carro</td><td>Entra y se va sin mirar productos</td><td>Shallow (visitas muy breves, sin fichas)</td></tr>
+        <tr><td>2</td><td>Cuenta</td><td>Solo Cuenta y servicios (y portada u otros): sin fichas, listados ni carro</td><td>Viene a revisar su pedido o su cuenta</td><td>No es una clase de Moe: él dejó fuera estas visitas</td></tr>
+        <tr><td>3</td><td>Compara</td><td>3 o más productos distintos en como mucho 2 listados o búsquedas distintos</td><td>Muchos productos dentro de pocas categorías: arma sus opciones</td><td>Search/deliberation (muchos productos, pocas categorías)</td></tr>
+        <tr><td>4</td><td>Explora</td><td>2 o más listados o búsquedas distintos</td><td>Recorre varias categorías</td><td>Hedonic browsing (muchas categorías)</td></tr>
+        <tr><td>5</td><td>Directa</td><td>1 o 2 productos y como mucho 1 listado o búsqueda, o va directo al carro o Checkout sin mirar productos</td><td>Va a uno o dos productos concretos, o vuelve a comprar lo que dejó en el carro</td><td>Directed buying (pocos productos y categorías)</td></tr>
       </tbody></table></div>
-    <h3 id="reparto">Probabilidad de que una visita sea de cada tipo</h3>
+    <p class="nota-corta">Cómo se mide: <b>productos distintos</b> = fichas con código de producto distinto; <b>listados o búsquedas distintos</b> = páginas de listado o de resultados de búsqueda con nombre distinto (equivale a las “categorías distintas” de Moe); <b>vuelve a una ficha</b> = regresa a una ficha ya vista después de ver otra página (dos clics seguidos en la misma ficha no cuentan, por la ficha repetida de la app). Knowledge building de Moe no aplica: Falabella no tiene páginas de información o comunidad. Limitaciones: es una clasificación por reglas inspirada en Moe, no una réplica de su clustering. Describe cómo navega la visita, no prueba su intención.</p>
+    <h3 id="reparto">Probabilidad de que una visita sea de cada clase</h3>
     <div class="scroll"><table class="tabla" id="tabla-t-reparto"></table></div>
-    <h3 id="caminos">P4 por tipo: camino más probable</h3>
-    <figure class="fig"><img src="./p45_fig_caminos.svg" alt="Camino más probable de cada tipo de visita" style="width:100%;height:auto"><figcaption>Camino más probable de cada tipo (compradores | no compradores).</figcaption></figure>
+  </section>
+
+  <section id="perfil">
+    <h2>¿Las clases se distinguen? (validación al estilo de Moe)</h2>
+    <p class="nota-corta">Moe validó sus grupos viendo que se comportan distinto y que compran distinto. Lo esperado es que Compara vea más productos, Explora más listados y Directa pocos productos. Con IC 95% (bootstrap por cliente).</p>
+    <div class="scroll"><table class="tabla" id="tabla-t-perfil"></table></div>
+    <p class="conclusion"><b>Por ende,</b> las clases se distinguen por cómo navegan (productos, listados, repetición), en la dirección que plantea Moe. En compra se separan menos: Directa es la que más compra (14,9%), como en Moe, pero Compara compra menos que Explora (11,0% frente a 13,6%). En Moe era al revés. Llegar al carro es parecido en las tres clases largas (≈48% en compradores, ≈22% en no compradores).</p>
+  </section>
+
+  <section id="caminos">
+    <h2>P4 por clase: camino más probable</h2>
+    <figure class="fig"><img src="./p45_fig_caminos.svg?v=2026111201" alt="Camino más probable de cada clase de visita" style="width:100%;height:auto"><figcaption>Camino más probable de cada clase (compradores | no compradores). Parte en la entrada más común y sigue el siguiente estado más probable.</figcaption></figure>
     <div class="scroll"><table class="tabla" id="tabla-t-clave"></table></div>
-    <h3 id="matriz">P4 por tipo: matriz completa (por clic, con autotransiciones)</h3>
-    <div class="controles"><select id="t-sel" aria-label="Tipo y grupo"></select></div>
+  </section>
+
+  <section id="matriz">
+    <h2>P4 por clase: matriz completa (por clic, con autotransiciones)</h2>
+    <p class="nota-corta">La suma de las transiciones de las cinco clases reproduce exactamente la matriz de P4 (la base no cambia).</p>
+    <div class="controles"><select id="t-sel" aria-label="Clase y grupo"></select></div>
     <div class="scroll"><table class="tabla" id="tabla-t-matriz"></table></div>
-    <h3 id="fuga">P5 por tipo: fuga por salida de cada estado</h3>
-    <p class="nota-corta">Entre paréntesis, las salidas del estado. Se muestran solo celdas con 30 salidas o más.</p>
+  </section>
+
+  <section id="fuga">
+    <h2>P5 por clase: fuga por salida de cada estado</h2>
+    <p class="nota-corta">Entre paréntesis, las salidas del estado. Solo celdas con 30 salidas o más.</p>
     <div class="scroll"><table class="tabla" id="tabla-t-fuga"></table></div>
     <div class="scroll"><table class="tabla texto" id="tabla-t-salida"></table></div>
-    <h3 id="mezcla">¿La diferencia entre grupos viene del tipo de visita?</h3>
-    <figure class="fig"><img src="./p45_fig_mezcla.svg" alt="Fuga con la mezcla de visitas de los compradores" style="width:100%;height:auto"><figcaption>Fuga por salida del no comprador si tuviera la mezcla de tipos de visita del comprador.</figcaption></figure>
+  </section>
+
+  <section id="mezcla">
+    <h2>¿La diferencia entre grupos viene de la clase de visita?</h2>
+    <figure class="fig"><img src="./p45_fig_mezcla.svg?v=2026111201" alt="Fuga con la mezcla de visitas de los compradores" style="width:100%;height:auto"><figcaption>Fuga por salida del no comprador si tuviera la misma mezcla de clases de visita que el comprador.</figcaption></figure>
     <div class="scroll"><table class="tabla" id="tabla-t-mezcla"></table></div>
-    <h3 id="sens">Sensibilidades</h3>
+  </section>
+
+  <section id="sens">
+    <h2>Sensibilidades</h2>
+    <p class="nota-corta">Umbrales alternativos de las reglas (uno a la vez):</p>
+    <div class="scroll"><table class="tabla texto" id="tabla-t-reglas"></table></div>
     <p class="nota-corta">Compradores antes y después de su 1ª compra:</p>
     <div class="scroll"><table class="tabla" id="tabla-t-momento"></table></div>
     <div class="scroll"><table class="tabla" id="tabla-t-momento-fs"></table></div>
-    <p class="nota-corta">Reglas alternativas (una a la vez):</p>
-    <div class="scroll"><table class="tabla texto" id="tabla-t-reglas"></table></div>
     <p class="nota-corta">Semanas:</p>
     <div class="scroll"><table class="tabla" id="tabla-t-semanas"></table></div>
     <p class="fuente">Script: fase7_p45_tipos_visita.R (en la carpeta Script R tesis) · datos: <a href="./p45_tipos_anexo.json">p45_tipos_anexo.json</a>.</p>
   </section>
-  <p class="pie">Anexo P4 y P5 · Tipos de visita · Desafío 2 Customer Journey Falabella · Datos: julio 2026. Cálculo propio en R.</p>
+  <p class="pie">Anexo P4 y P5 · Clasificación de visitas · Desafío 2 Customer Journey Falabella · Datos: julio 2026. Cálculo propio en R.</p>
 </main>
-<script src="./app3.js?v=2026111102"></script>
+<script src="./app3.js?v=2026111201"></script>
 </body>
 </html>
